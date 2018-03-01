@@ -6,7 +6,7 @@ distro=$(awk -F= '/^ID=/ {gsub(/\"/, "", $2); print $2}' /etc/*release)
 export distro=${DISTRO:=$distro}
 
 if [[ "${PYTHON3}" == "no" ]]; then
-    dpkg_python_packages=("python" "virtualenv")
+    dpkg_python_packages=("python" "virtualenv" "gcc" "make" "build-essential")
     rpm_python_packages=("python" "python-virtualenv")
 else
     dpkg_python_packages=("python3" "python3-virtualenv")
